@@ -1,10 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Nicholas Taylor
- * Created on March 10 2017
- * Purpose:  Template to be utilized in creating
- *           solutions to problems in our CSC/CIS 5 
- *           class.
+ * Created on March 20 2017
+ *
  */
 
 //System Libraries
