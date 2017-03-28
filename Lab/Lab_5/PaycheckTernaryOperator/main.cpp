@@ -31,10 +31,8 @@ int main(int argc, char** argv) {
         return 1;
     }
     //Map inputs to outputs or process the data
-    hrsWrkd <= 40 ? payChck = payRate*hrsWrkd : 
-                   (payChck += payRate*40, 
-                    payChck += (payRate * ((hrsWrkd - 40)))*2); 
-       
+    hrsWrkd <= 40 ? payChck = payRate*hrsWrkd : payChck = payRate*hrsWrkd + payRate*(hrsWrkd - 40);
+                  
     //Output the transformed data
     cout<<"With a pay rate = $"<<payRate<<"/hr and hours worked = "<<hrsWrkd<<" you would make a paycheck = $"<<payChck;
     //Exit stage right!

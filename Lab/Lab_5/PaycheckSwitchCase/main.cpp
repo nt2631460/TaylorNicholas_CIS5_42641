@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
         case 10: case 9: case 8: case 7: case 6: 
         case 5:  case 4: case 3: case 2: case 1: case 0:
                   payChck += payRate*hrsWrkd; break; 
-        default: (payChck += payRate*40, payChck += (payRate * (hrsWrkd - 40))*2);
+        default:  payChck = payRate*hrsWrkd + payRate*(hrsWrkd - 40);
     }
        
     //Output the transformed data
