@@ -35,8 +35,7 @@ int main(int argc, char** argv) {
         payChck = payRate*hrsWrkd;
     }
     else{
-        payChck += payRate*40;
-        payChck += (payRate * ((hrsWrkd - 40)))*2;
+        payChck += payRate*hrsWrkd + payRate*(hrsWrkd - 40);
     }
     //Output the transformed data
     cout<<"With a pay rate = $"<<payRate<<"/hr and hours worked = "<<hrsWrkd<<" you would make a paycheck = $"<<payChck;
