@@ -7,6 +7,7 @@
 
 //System Libraries
 #include <iostream>  //Input - Output Library
+#include <iomanip>  //For fixed-point notation.
 using namespace std; //Name-space under which system libraries exist
 
 //User Libraries
@@ -29,10 +30,10 @@ int main(int argc, char** argv) {
         cout<<"Type 3 Membership Fee Increase Problem"<<endl;
         cout<<"Type 4 for MPH Problem"<<endl;
         cout<<"Type 5 for Pennies Earned Problem 5"<<endl;
-        cout<<"Type 6 for Problem 6"<<endl;
-        cout<<"Type 7 for Problem 7"<<endl;
-        cout<<"Type 8 for Problem 8"<<endl;
-        cout<<"Type 9 for Problem 9"<<endl<<endl;
+        cout<<"Type 6 for Population Problem"<<endl;
+        cout<<"Type 7 for Temperature Problem"<<endl;
+        cout<<"Type 8 for Greatest and Least Problem"<<endl;
+        cout<<"Type 9 for Ocean Risen Problem"<<endl<<endl;
        
         //Input the choice
         cout<<"Problem ";
@@ -123,19 +124,80 @@ int main(int argc, char** argv) {
                 break;
             }
             case '6':{
-                cout<<"In problem solution 6"<<endl;
+                    //Declare variables
+                    double size, avg_increase, days;
+                    //Input data
+                    cout <<"What is the initial population? ";
+                    cin >> size;
+                    cout << "What is their average daily population increase as a percent? ";
+                    cin >> avg_increase;
+                    cout << "How many days will they multiply for? ";
+                    cin >> days;
+                    //Output the transformed data
+                    cout<<"Initial Population: "<<size<<endl;
+                    cout<<"Population Growth"<<endl;
+                    cout<<"Day      |  Population"<<endl;
+                    cout<<"----------------------------"<<endl;
+                    for(int i = 0; i<days; i++){
+
+                        size = size*(1+(avg_increase/100));
+                        cout<<" "<<i+1<<"       |     "<<size<<endl;
+                    }
                 break;
             }
             case '7':{
-                cout<<"In problem solution 7"<<endl;
+                for (int C = 0; C<21; C++){
+                    cout<< setprecision(1)<< fixed;
+                    cout<<"When Celsius is "<< C <<" Fahrenheit is: "<<((9.0/5)*C) + 32<<endl;
+                }
                 break;
             }
             case '8':{
-                cout<<"In problem solution 8"<<endl;
+                    //Declare variables
+                    int greatest, least, num, counter;
+                    //Initialize variables
+                    counter = 0;
+                    //Output the transformed data
+                    while(num!=-99){
+                        cout<<"Please enter an integer to compare: ";
+                        cin >> num;
+                        counter ++;
+                        if (counter==1){
+                            greatest = num;
+                            least = num;
+                        }
+                        if(num!=-99){
+                            if(num>greatest){
+                                greatest = num;
+                            }
+                            if(num<least){
+                                least = num;
+                            }     
+                        }        
+                    }
+                    if (counter<1){
+                        cout<<"No numbers entered to compare."<<endl;
+                    }
+                    else{
+                        cout<<endl;
+                        cout<<"Greatest: "<<greatest<<endl;
+                        cout<<"Least: "<< least<<endl;
+                    }
                 break;
             }
             case '9':{
-                cout<<"In problem solution 9"<<endl;
+                    //Declare variables
+                    double anual_rise = 1.5;
+                    //Output the transformed data
+                    cout<<"   Years     |  Millimeters Risen"<<endl;
+                    for (int years = 0; years<25; years++ ){
+                        if(years>8){
+                            cout<<"   "<<years+1<<"        |      "<<1.5*(years+1)<<endl;
+                        }
+                        else{
+                            cout<<"   "<<years+1<<"         |      "<<1.5*(years+1)<<endl;
+                        }
+                    }
                 break;
             }
             default:{
